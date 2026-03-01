@@ -59,22 +59,23 @@ function renderMarketCards(coins) {
     card.className = "crypto-card";
 
     card.innerHTML = `
-    <div class="card-top">
-      <div class="coin-info">
-        <img
-          src="${coin.image}"
-          alt="${coin.name}"
-          class="coin-logo"
-        />
+  <div class="card-top">
+    <div class="coin-header">
+      <img src="${coin.image}" alt="${coin.name}" class="coin-logo" />
+      <div class="coin-text">
         <span class="coin-name">${coin.name}</span>
+        <span class="symbol">${coin.symbol.toUpperCase()}</span>
       </div>
-      <span class="star">${isInWatchlist ? "★" : "☆"}</span>
     </div>
-      <span class="symbol">${coin.symbol.toUpperCase()}</span>
-      <h3>$${coin.current_price.toLocaleString()}</h3>
-      <p class="${changeClass}">
-        ${change >= 0 ? "+" : ""}${change.toFixed(2)}%
-      </p>
+
+    <span class="star">${isInWatchlist ? "★" : "☆"}</span>
+  </div>
+
+  <h3>$${coin.current_price.toLocaleString()}</h3>
+  <p class="${changeClass}">
+    ${change >= 0 ? "+" : ""}${change.toFixed(2)}%
+  </p>
+
     `;
 
     // Star click event
@@ -121,23 +122,23 @@ function renderWatchlist() {
     card.className = "crypto-card";
 
     card.innerHTML = `
-      <div class="card-top">
-        <div class="coin-info">
-          <img
-            src="${coin.image}"
-            alt="${coin.name}"
-            class="coin-logo"
-          />
-          <span class="coin-name">${coin.name}</span>
-        </div>
-        <span class="star">★</span>
+  <div class="card-top">
+    <div class="coin-header">
+      <img src="${coin.image}" alt="${coin.name}" class="coin-logo" />
+      <div class="coin-text">
+        <span class="coin-name">${coin.name}</span>
+        <span class="symbol">${coin.symbol.toUpperCase()}</span>
       </div>
-      <span class="symbol">${coin.symbol.toUpperCase()}</span>
-      <h3>$${coin.current_price.toLocaleString()}</h3>
-      <p class="${changeClass}">
-        ${change >= 0 ? "+" : ""}${change.toFixed(2)}%
-      </p>
-    `;
+    </div>
+
+    <span class="star">★</span>
+  </div>
+
+  <h3>$${coin.current_price.toLocaleString()}</h3>
+  <p class="${changeClass}">
+     ${change >= 0 ? "+" : ""}${change.toFixed(2)}%
+  </p>
+`;
 
     card.querySelector(".star").addEventListener("click", () => {
       toggleWatchlist(coin);
