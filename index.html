@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Crypto Market Overview</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo">
+        <span class="logo-crypto">Crypto</span><span class="logo-pulse">Pulse</span>
+      </div>
+
+      <a href="#">Market</a>
+    </div>
+
+    <div class="nav-right">
+      <input class="nav-search" type="text" placeholder="Search assets..." />
+      <div class="profile">JD</div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- Watchlist -->
+<section>
+  <div class="section-header">
+    <h2>My Watchlist</h2>
+    <a href="#" class="edit-link">Edit List</a>
+  </div>
+
+  <p class="section-subtitle">Your personalized collection of assets</p>
+
+  <!-- Watchlist row -->
+  <div class="card-row" id="watchlistRow">
+    <!-- Watchlist cards injected by JS -->
+
+    <!-- Add Asset Card (must be INSIDE the row) -->
+    <div class="crypto-card add-card" id="addWatchlistCard">
+      <div class="add-icon">+</div>
+      <p>Add asset to watchlist</p>
+    </div>
+  </div>
+</section>
+
+    <!-- Market Overview -->
+    <section class="market">
+      <div class="section-header">
+        <h2>Market Overview</h2>
+        <button class="all-assets">All Assets</button>
+      </div>
+
+      <p class="section-subtitle">Real-time data for top performing assets</p>
+      <div class="grid" id="marketGrid">
+  <!-- Market cards will be injected here -->
+      </div>
+      <!-- View All Button -->
+        <div class="view-all-wrapper">
+            <button class="view-all-btn">View All Cryptocurrencies</button>
+        </div>
+
+    </section>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
